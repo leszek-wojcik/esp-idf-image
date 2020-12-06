@@ -6,6 +6,7 @@ RUN useradd esp-idf
 RUN mkdir /github
 RUN chown esp-idf /github
 USER esp-idf
+
 WORKDIR /github
 RUN git clone -b xtensa-1.22.x https://github.com/espressif/crosstool-NG.git
 WORKDIR /github/crosstool-NG
@@ -22,7 +23,7 @@ RUN chmod -R u+w builds/xtensa-esp32-elf
 ENV PATH /github/crosstool-NG/builds/xtensa-esp32-elf/bin:$PATH
 
 WORKDIR /github
-RUN git clone -b v3.2.3 --recursive https://github.com/espressif/esp-idf.git
+RUN git clone -b v3.3 --recursive https://github.com/espressif/esp-idf.git
 
 ENV IDF_PATH /github/esp-idf
 
