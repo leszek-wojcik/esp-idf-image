@@ -1,1 +1,0 @@
-sudo docker run -ti -device=/dev/ttyUSB0 esp-idf /bin/bash
